@@ -1,6 +1,10 @@
-# Hi, I'm Dhyan 👋
+<p align="center">
+  <img src="./assets/header.svg" alt="Hey, I'm Dhyan. CS @ UCF" width="100%">
+</p>
 
-Computer science student at **UCF** in Orlando, FL. I like building things people can actually use: computer vision in the browser, full stack web apps, and whatever a weekend hackathon throws at me. On most of my hackathon teams I'm the one splitting up the work and keeping everyone shipping.
+<p align="center">
+  <img src="./assets/terminal.svg" alt="A terminal typing out dhyan.json: stress false gets corrected to true, sleep schedule healthy gets corrected to what schedule" width="100%">
+</p>
 
 ## 🔨 What I'm working on
 
