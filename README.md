@@ -9,6 +9,13 @@
 * **loop engineering**
 * **the fundamentals**
 
+## Languages across my repos
+
+<!--LANGS:START-->
+```text
+Counting... (this updates itself once a day)
+```
+<!--LANGS:END-->
 
 ## ☕ Off the clock
 
@@ -16,4 +23,6 @@
 
 ## Find me
 
- [dsuresh.dev](https://www.dsuresh.dev)
+🌐 [dsuresh.dev](https://www.dsuresh.dev)<br>
+💼 [LinkedIn](https://www.linkedin.com/in/dhyansuresh)<br>
+✉️ [dhyan.sur@gmail.com](mailto:dhyan.sur@gmail.com)
