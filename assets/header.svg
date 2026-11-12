@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="190" viewBox="0 0 820 190" role="img" aria-label="Hey, I'm Dhyan. CS at UCF.">
+<style>
+text{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+@keyframes drift{from{transform:translateX(-120px)}to{transform:translateX(0)}}
+@keyframes drift2{from{transform:translateX(90px)}to{transform:translateX(0)}}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes wave{0%{transform:rotate(0)}15%{transform:rotate(16deg)}30%{transform:rotate(-8deg)}45%{transform:rotate(14deg)}60%{transform:rotate(-4deg)}75%{transform:rotate(10deg)}100%{transform:rotate(0)}}
+.w1{animation:drift 1.6s cubic-bezier(.2,.7,.2,1) both}
+.w2{animation:drift2 1.9s cubic-bezier(.2,.7,.2,1) both}
+.t1{animation:up .7s .35s ease-out both}
+.t2{animation:up .7s .6s ease-out both}
+.hand{transform-box:fill-box;transform-origin:70% 85%;animation:wave 1.4s 1s ease-in-out both}
+</style>
+<defs>
+<linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#3a1c71"/><stop offset=".55" stop-color="#5b3c9e"/><stop offset="1" stop-color="#1f6f8b"/></linearGradient>
+<linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#ff7eb6" stop-opacity=".55"/><stop offset="1" stop-color="#79c0ff" stop-opacity=".45"/></linearGradient>
+<clipPath id="round"><rect width="820" height="190" rx="14"/></clipPath>
+</defs>
+<g clip-path="url(#round)">
+<rect width="820" height="190" fill="url(#g)"/>
+<path class="w1" d="M-140 150 C 40 110, 180 185, 360 150 S 660 110, 960 150 V 200 H -140 Z" fill="url(#g2)"/>
+<path class="w2" d="M-100 168 C 80 140, 260 200, 440 170 S 740 140, 940 168 V 200 H -100 Z" fill="#0d1117" fill-opacity=".55"/>
+<text class="t1" x="40" y="78" fill="#ffffff" font-size="40" font-weight="700">Hey, I'm Dhyan</text>
+<g class="t1"><text class="hand" x="338" y="76" font-size="38">👋</text></g>
+<text class="t2" x="42" y="114" fill="#e9dcff" font-size="17">CS @ UCF  ·  I build things, then debug them for 6 hours</text>
+</g>
+</svg>
