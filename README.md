@@ -1,4 +1,3 @@
-
 <p align="center">
   <img src="./assets/terminal.svg" alt="A terminal typing out dhyan.json: stress false gets corrected to true, sleep schedule healthy gets corrected to what schedule" width="100%">
 </p>
