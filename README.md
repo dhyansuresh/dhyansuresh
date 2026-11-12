@@ -42,6 +42,10 @@
 **Tools**<br>
 <img src="https://skillicons.dev/icons?i=git,github,androidstudio,webstorm" alt="Git, GitHub, Android Studio, WebStorm">
 
+## ☕ Off the clock
+
+📖 **Reading:** *A Guide to the Good Life: The Ancient Art of Stoic Joy* by William B. Irvine
+
 ## 📫 Find me
 
 🌐 [dsuresh.dev](https://www.dsuresh.dev)
