@@ -7,6 +7,13 @@
 * **SignSpeak**: a real time ASL interpreter that runs entirely in the browser. Live hand tracking with MediaPipe is working; next up is a PyTorch classifier trained on hand landmarks from an 87k image dataset.
 * **HomePilot**: a local voice and webcam grocery assistant built by a team of four. I own the vision model and the service that recognizes products from photos.
 
+## 📚 What I'm learning
+
+* **AI workflows**: making AI part of how I actually plan, code and ship
+* **MCP (Model Context Protocol)**: connecting AI agents to real tools and data
+* **Loop engineering**: designing the plan, act, check, retry loops that make agents reliable
+* **The fundamentals**: data structures, algorithms and systems, because they never go out of style
+
 ## ⭐ Featured projects
 
 | Project | What it does | Built with |
@@ -18,11 +25,22 @@
 | [World Cup Watch Party](https://github.com/dhyansuresh/wc-watch-party-bloomhacks2026) | Find and host World Cup watch parties near you. Built at BloomHacks 2026. | React, Firebase |
 | [LegalTender](https://github.com/dhyansuresh/morgan-legaltender) | AI legal assistant prototype for the Morgan &amp; Morgan challenge at KnightHacks 2025, my first hackathon | Python, FastAPI, Gemini |
 
-## 🧰 Tools I use
+## 🧰 Tools and frameworks
 
-**Languages:** Java · Python · TypeScript · JavaScript · C<br>
-**Web:** React · Node · Express · Vite<br>
-**Data and ML:** PyTorch · TensorFlow.js · MediaPipe · PostgreSQL · Prisma · Firebase
+**Languages**<br>
+<img src="https://skillicons.dev/icons?i=java,py,ts,js,c" alt="Java, Python, TypeScript, JavaScript, C">
+
+**Frameworks and libraries**<br>
+<img src="https://skillicons.dev/icons?i=react,nodejs,express,vite,fastapi" alt="React, Node.js, Express, Vite, FastAPI">
+
+**AI and ML**<br>
+<img src="https://skillicons.dev/icons?i=pytorch,tensorflow" alt="PyTorch, TensorFlow"> &nbsp;+ MediaPipe
+
+**Data**<br>
+<img src="https://skillicons.dev/icons?i=postgres,prisma,firebase,mongodb" alt="PostgreSQL, Prisma, Firebase, MongoDB">
+
+**Tools**<br>
+<img src="https://skillicons.dev/icons?i=git,github,androidstudio,webstorm" alt="Git, GitHub, Android Studio, WebStorm">
 
 ## 📫 Find me
 
