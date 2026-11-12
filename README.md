@@ -13,7 +13,15 @@
 
 <!--LANGS:START-->
 ```text
-Counting... (this updates itself once a day)
+Languages across 8 repos (public)
+
+Python        █████████████░░░░░░░░░░░░   52.78 %
+TypeScript    █████░░░░░░░░░░░░░░░░░░░░   19.93 %
+JavaScript    █████░░░░░░░░░░░░░░░░░░░░   18.59 %
+CSS           ██░░░░░░░░░░░░░░░░░░░░░░░    6.31 %
+Java          █░░░░░░░░░░░░░░░░░░░░░░░░    1.55 %
+Shell         █░░░░░░░░░░░░░░░░░░░░░░░░    0.63 %
+HTML          █░░░░░░░░░░░░░░░░░░░░░░░░    0.22 %
 ```
 <!--LANGS:END-->
 
