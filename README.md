@@ -1,7 +1,7 @@
 <img src="./assets/hello-45790865c0.svg" alt="Hey there! I'm Dhyan, a senior at the University of Central Florida. I build full stack apps, with a focus on the backend. Undergrad researcher at UCF, working on gait analysis with wearable sensors." width="100%">
 
 <p align="center">
-  <img src="./assets/terminal.svg" alt="A terminal typing out dhyan.json" width="100%">
+  <img src="./assets/terminal-51d4ad319e.svg" alt="A terminal typing out dhyan.json" width="100%">
 </p>
 
 
