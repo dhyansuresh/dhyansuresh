@@ -10,36 +10,11 @@ Undergrad researcher at UCF, working on gait analysis with wearable sensors.<br>
 
 ## Languages 
 
-<!--LANGS:START-->
-```text
-Most used languages:
-
-Python        ████████████░░░░░░░░░░░░░   46.57 %
-JavaScript    █████░░░░░░░░░░░░░░░░░░░░   18.91 %
-TypeScript    ████░░░░░░░░░░░░░░░░░░░░░   17.55 %
-CSS           ██░░░░░░░░░░░░░░░░░░░░░░░    6.01 %
-C             █░░░░░░░░░░░░░░░░░░░░░░░░    4.06 %
-Shell         █░░░░░░░░░░░░░░░░░░░░░░░░    3.45 %
-Java          █░░░░░░░░░░░░░░░░░░░░░░░░    1.36 %
-TeX           █░░░░░░░░░░░░░░░░░░░░░░░░    1.33 %
-Other         █░░░░░░░░░░░░░░░░░░░░░░░░    0.76 %
-```
-<!--LANGS:END-->
+<img src="./assets/languages.svg" alt="Most used languages across my repos" width="100%">
 
 ## ☕ Off the clock
 
-📖 **Reading:** *A Guide to the Good Life: The Ancient Art of Stoic Joy* by William B. Irvine
-
-🎬 **Recently watched** on [Letterboxd](https://letterboxd.com/dsuresh/):
-
-<!--FILMS:START-->
-
-* [*Resident Evil*](https://letterboxd.com/dsuresh/film/resident-evil-2026/) (2026) ★★½
-* [*The Odyssey*](https://letterboxd.com/dsuresh/film/the-odyssey-2026/) (2026) ★★★★½
-* [*One Battle After Another*](https://letterboxd.com/dsuresh/film/one-battle-after-another/) (2025) ★★★★½
-* [*Longlegs*](https://letterboxd.com/dsuresh/film/longlegs/) (2024) ★★★½
-
-<!--FILMS:END-->
+<a href="https://letterboxd.com/dsuresh/"><img src="./assets/offclock.svg" alt="Now reading A Guide to the Good Life by William B. Irvine, plus my recently watched films on Letterboxd" width="100%"></a>
 
 ## Find me
 
