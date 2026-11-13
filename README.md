@@ -2,11 +2,7 @@
   <img src="./assets/terminal.svg" alt="A terminal typing out dhyan.json" width="100%">
 </p>
 
-##  Hey there!
-
-I'm Dhyan, a senior at the University of Central Florida.<br>
-I build full stack apps, with a focus on the backend.<br>
-Undergrad researcher at UCF, working on gait analysis with wearable sensors.<br>
+<img src="./assets/hello.svg" alt="Hey there! I'm Dhyan, a senior at the University of Central Florida. I build full stack apps, with a focus on the backend. Undergrad researcher at UCF, working on gait analysis with wearable sensors." width="100%">
 
 ## Languages 
 
@@ -18,6 +14,6 @@ Undergrad researcher at UCF, working on gait analysis with wearable sensors.<br>
 
 ## Find me
 
-🌐 [dsuresh.dev](https://www.dsuresh.dev)<br>
-💼 [LinkedIn](https://www.linkedin.com/in/dhyansuresh)<br>
-✉️ [dhyan.sur@gmail.com](mailto:dhyan.sur@gmail.com)
+<a href="https://www.dsuresh.dev"><img src="./assets/btn-web.svg" alt="Website: dsuresh.dev" width="32%"></a>
+<a href="https://www.linkedin.com/in/dhyansuresh"><img src="./assets/btn-linkedin.svg" alt="LinkedIn: in/dhyansuresh" width="32%"></a>
+<a href="mailto:dhyan.sur@gmail.com"><img src="./assets/btn-email.svg" alt="Email: dhyan.sur@gmail.com" width="32%"></a>
