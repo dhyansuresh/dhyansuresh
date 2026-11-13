@@ -1,13 +1,14 @@
 <p align="center">
-  <img src="./assets/terminal.svg" alt="A terminal typing out dhyan.json: stress false gets corrected to true, sleep schedule healthy gets corrected to what schedule" width="100%">
+  <img src="./assets/terminal.svg" alt="A terminal typing out dhyan.json" width="100%">
 </p>
 
-##  What I'm learning
+##  Hey there!
 
-* **creating AI workflows**
-* **MCP**
-* **loop engineering**
-* **the fundamentals**
+I'm Dhyan, a senior at the University of Central Florida.<br>
+I build full stack apps, with a focus on the backend.<br>
+Undergrad researcher at UCF, working on gait analysis with wearable sensors.<br>
+Currently learning new AI tools (MCP, loop engineering).
+
 
 ## Languages across my repos
 
