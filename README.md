@@ -34,10 +34,10 @@ Other         █░░░░░░░░░░░░░░░░░░░░░
 
 <!--FILMS:START-->
 
+* [*Resident Evil*](https://letterboxd.com/dsuresh/film/resident-evil-2026/) (2026) ★★½
 * [*The Odyssey*](https://letterboxd.com/dsuresh/film/the-odyssey-2026/) (2026) ★★★★½
 * [*One Battle After Another*](https://letterboxd.com/dsuresh/film/one-battle-after-another/) (2025) ★★★★½
 * [*Longlegs*](https://letterboxd.com/dsuresh/film/longlegs/) (2024) ★★★½
-* [*A Taxi Driver*](https://letterboxd.com/dsuresh/film/a-taxi-driver/) (2017) ★★★ ↻
 
 <!--FILMS:END-->
 
