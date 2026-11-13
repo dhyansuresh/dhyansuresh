@@ -1,14 +1,5 @@
-"""Draw the animated Windows 95 DOS prompt at the top of the profile README.
+# Windows 95 DOS 
 
-Everything it types comes from data/terminal.json:
-  boot          lines shown when the window opens
-  command       what gets typed at the first prompt
-  fields        the JSON it types out. Each one has a key and a value (text,
-                number, true/false or a list). Add "fix" to have the value typed,
-                backspaced and replaced with the fix. Add "comment" for a // note.
-  last_command  what gets typed at the last prompt
-  error         the error box that pops up at the end (leave it out for none)
-"""
 import base64
 import html
 import json
@@ -23,7 +14,7 @@ FS = 21
 CW = 10.0
 LH = 23
 TB_H = 30                    # toolbar height
-CON_X, CON_Y = 8, 26 + TB_H + 4     # console origin (inside the window)
+CON_X, CON_Y = 8, 26 + TB_H + 4     # console origin 
 CON_W = W - 16
 PAD_X = CON_X + 14
 TOP = CON_Y + 26
@@ -35,7 +26,9 @@ PROMPT = [("C:\\DHYAN>", "dim")]
 
 
 def value_parts(v, color=None):
-    """Turn a JSON value into colored pieces."""
+    # colored pieces
+    if v is None:
+      return [("null", color or "lit")]
     if isinstance(v, bool):
         return [("true" if v else "false", color or "lit")]
     if isinstance(v, (int, float)):
@@ -61,7 +54,7 @@ for n, f in enumerate(fields):
     if "fix" in f:
         steps = [("type", key(f["key"])), ("type", value_parts(f["value"]) + comma), ("pause", 0.9),
                  ("erase", 1), ("pause", 0.25),
-                 ("type", value_parts(f["fix"], "bad" if isinstance(f["fix"], bool) else None) + comma)]
+                 ("type", value_parts(f["fix"], "bad" if isinstance(f["fix"], bool) or f["fix"] is None else None) + comma)]
     else:
         steps = [("type", key(f["key"]) + value_parts(f["value"]) + comma)]
     if f.get("comment"):
