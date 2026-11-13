@@ -1,5 +1,13 @@
 [
   {
+    "title": "Resident Evil",
+    "year": "2026",
+    "rating": 2.5,
+    "rewatch": false,
+    "link": "https://letterboxd.com/dsuresh/film/resident-evil-2026/",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/1/3/0/2/7/1/7/1302717-untitled-resident-evil-reboot-0-600-0-900-crop.jpg?v=a688bf1bc7"
+  },
+  {
     "title": "The Odyssey",
     "year": "2026",
     "rating": 4.5,
@@ -22,13 +30,5 @@
     "rewatch": false,
     "link": "https://letterboxd.com/dsuresh/film/longlegs/",
     "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/1/0/0/5/9/1110059-longlegs-0-600-0-900-crop.jpg?v=9d77241a8c"
-  },
-  {
-    "title": "A Taxi Driver",
-    "year": "2017",
-    "rating": 3.0,
-    "rewatch": true,
-    "link": "https://letterboxd.com/dsuresh/film/a-taxi-driver/",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/3/6/9/8/5/6/369856-a-taxi-driver-0-600-0-900-crop.jpg?v=8787b2effd"
   }
 ]
