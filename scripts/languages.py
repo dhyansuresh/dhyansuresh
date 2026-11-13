@@ -11,6 +11,9 @@ import urllib.request
 OWNER = "dhyansuresh"
 EXCLUDE = {OWNER, "devfest-florida-2026-webxr-voice-workshop"}  # profile repo + workshop starter code
 TOP_N = 8
+# Languages left out of the stats. Edit this list to change what shows.
+SKIP = {"Shell", "CSS", "TeX", "HTML", "SCSS", "Makefile", "Dockerfile",
+        "Batchfile", "PowerShell", "Procfile"}
 BAR = 25
 START, END = "<!--LANGS:START-->", "<!--LANGS:END-->"
 
@@ -42,12 +45,11 @@ def build(repos, lang_by_repo, include_private):
     totals = {}
     for name in repos:
         for lang, n in lang_by_repo[name].items():
-            totals[lang] = totals.get(lang, 0) + n
+            if lang not in SKIP:
+                totals[lang] = totals.get(lang, 0) + n
     total = sum(totals.values()) or 1
     ranked = sorted(totals.items(), key=lambda kv: kv[1], reverse=True)
-    top, rest = ranked[:TOP_N], ranked[TOP_N:]
-    if rest:
-        top.append(("Other", sum(n for _, n in rest)))
+    top = ranked[:TOP_N]
     lines = ["Most used languages:", ""]
     for lang, n in top:
         pct = n / total * 100
@@ -60,12 +62,11 @@ def save_json(repos, lang_by_repo, path="data/languages.json"):
     totals = {}
     for name in repos:
         for lang, n in lang_by_repo[name].items():
-            totals[lang] = totals.get(lang, 0) + n
+            if lang not in SKIP:
+                totals[lang] = totals.get(lang, 0) + n
     total = sum(totals.values()) or 1
     ranked = sorted(totals.items(), key=lambda kv: kv[1], reverse=True)
-    top, rest = ranked[:TOP_N], ranked[TOP_N:]
-    if rest:
-        top.append(("Other", sum(n for _, n in rest)))
+    top = ranked[:TOP_N]
     data = {"repos": len(repos),
             "languages": [{"name": k, "pct": round(v / total * 100, 2)} for k, v in top]}
     os.makedirs(os.path.dirname(path), exist_ok=True)
