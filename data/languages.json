@@ -3,11 +3,11 @@
   "languages": [
     {
       "name": "Python",
-      "pct": 52.63
+      "pct": 52.65
     },
     {
       "name": "JavaScript",
-      "pct": 21.37
+      "pct": 21.38
     },
     {
       "name": "TypeScript",
@@ -15,19 +15,11 @@
     },
     {
       "name": "C",
-      "pct": 4.58
+      "pct": 4.59
     },
     {
       "name": "Java",
       "pct": 1.54
-    },
-    {
-      "name": "Perl",
-      "pct": 0.02
-    },
-    {
-      "name": "CMake",
-      "pct": 0.01
     }
   ]
 }
