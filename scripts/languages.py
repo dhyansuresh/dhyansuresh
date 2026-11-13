@@ -1,17 +1,11 @@
-"""Count the languages across Dhyan's repos and save them to data/languages.json.
-
-Runs in GitHub Actions. With a LANGS_TOKEN secret it includes private repos;
-without one it falls back to public repos only.
-"""
 import json
 import os
 import re
 import urllib.request
 
 OWNER = "dhyansuresh"
-EXCLUDE = {OWNER, "devfest-florida-2026-webxr-voice-workshop"}  # profile repo + workshop starter code
 TOP_N = 8
-# Languages left out of the stats. Edit this list to change what shows.
+# exclude
 SKIP = {"Shell", "CSS", "TeX", "HTML", "SCSS", "Makefile", "Dockerfile",
         "Batchfile", "PowerShell", "Procfile", "CMake"}
 MIN_PCT = 1.0   # hide languages that make up less than this share of your code
