@@ -1,10 +1,3 @@
-"""Draw the profile README panels as Windows 95 style DOS windows.
-
-Reads the files in data/ (about, languages, films, book, contact), downloads the
-cover and posters, and writes assets/hello.svg, assets/languages.svg,
-assets/offclock.svg and one assets/btn-*.svg button per contact link.
-Images are embedded so they show up inside GitHub's image proxy.
-"""
 import base64
 import hashlib
 import html
@@ -18,7 +11,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UI = "Tahoma, 'MS Sans Serif', 'Segoe UI', Arial, sans-serif"
 W = 820
 FS = 19
-CW = 9.0                      # rough VT323 character width at FS
+CW = 9.0                    
 C = {"dim": "#a8a8a8", "white": "#ffffff", "cyan": "#55ffff", "yellow": "#ffff55",
      "red": "#ff5555", "cell": "#1f3f3f"}
 
@@ -30,7 +23,7 @@ def path(*p):
 FONT = base64.b64encode(open(path("assets", "fonts", "vt323.woff2"), "rb").read()).decode()
 
 
-# ---------- Windows 95 chrome ----------
+
 def bevel(x, y, w, h, raised=True, fill="#c0c0c0"):
     lt1, rb1, lt2, rb2 = ("#ffffff", "#000000", "#dfdfdf", "#808080") if raised else ("#808080", "#ffffff", "#000000", "#dfdfdf")
     return (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}"/>'
@@ -118,7 +111,6 @@ def stars(x, y, rating, uid):
     return "".join(out)
 
 
-# ---------- images ----------
 def image_data(url, w, h):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (profile README updater)"})
     raw = urllib.request.urlopen(req, timeout=20).read()
@@ -145,13 +137,13 @@ def picture(x, y, w, h, url):
         return frame + text(x + w / 2, y + h / 2, "NO IMAGE", "dim", anchor="middle")
 
 
-# ---------- panels ----------
+
 def languages_panel():
     langs = json.load(open(path("data", "languages.json")))
     rows = langs["languages"]
     y0, lh = 26 + 30, 25
     body = [prompt(22, y0, "langs --all"),
-            text(22, y0 + lh, f"Most used languages across {langs['repos']} repos:", "dim")]
+            text(22, y0 + lh, "Languages:", "dim")]
     bx, cell, gap, n = 190, 13, 3, 25
     for i, row in enumerate(rows):
         y = y0 + lh * (i + 2) + 6
