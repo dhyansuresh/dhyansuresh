@@ -6,10 +6,12 @@ assets/offclock.svg and one assets/btn-*.svg button per contact link.
 Images are embedded so they show up inside GitHub's image proxy.
 """
 import base64
+import hashlib
 import html
 import io
 import json
 import os
+import re
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -227,7 +229,27 @@ def main():
         open(path("assets", f"btn-{c['id']}.svg"), "w", encoding="utf-8").write(button(c["label"], c["value"]))
     open(path("assets", "languages.svg"), "w", encoding="utf-8").write(languages_panel())
     open(path("assets", "offclock.svg"), "w", encoding="utf-8").write(offclock_panel())
+    bust_cache()
     print("panels written")
+
+
+def bust_cache():
+    """Tag each image link in README.md with a hash of the file, so GitHub's
+    image cache picks up a new version as soon as the picture changes."""
+    readme_path = path("README.md")
+    readme = open(readme_path, encoding="utf-8").read()
+
+    def tag(m):
+        name = m.group(1)
+        f = path("assets", name)
+        if not os.path.exists(f):
+            return m.group(0)
+        v = hashlib.sha256(open(f, "rb").read()).hexdigest()[:10]
+        return f"./assets/{name}?v={v}"
+
+    updated = re.sub(r"\./assets/([\w.-]+\.svg)(?:\?v=\w+)?", tag, readme)
+    if updated != readme:
+        open(readme_path, "w", encoding="utf-8").write(updated)
 
 
 if __name__ == "__main__":
