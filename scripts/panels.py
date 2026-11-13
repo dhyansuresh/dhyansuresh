@@ -234,22 +234,29 @@ def main():
 
 
 def bust_cache():
-    """Tag each image link in README.md with a hash of the file, so GitHub's
-    image cache picks up a new version as soon as the picture changes."""
+    """Give every generated image a file name that includes a hash of its
+    contents, and point README.md at it. GitHub caches images by path, so a
+    new name means visitors always get the current picture."""
     readme_path = path("README.md")
     readme = open(readme_path, encoding="utf-8").read()
-
-    def tag(m):
-        name = m.group(1)
-        f = path("assets", name)
-        if not os.path.exists(f):
-            return m.group(0)
-        v = hashlib.sha256(open(f, "rb").read()).hexdigest()[:10]
-        return f"./assets/{name}?v={v}"
-
-    updated = re.sub(r"\./assets/([\w.-]+\.svg)(?:\?v=\w+)?", tag, readme)
-    if updated != readme:
-        open(readme_path, "w", encoding="utf-8").write(updated)
+    names = ["hello", "languages", "offclock"] + [f"btn-{c['id']}" for c in json.load(open(path("data", "contact.json")))]
+    for name in names:
+        plain = path("assets", f"{name}.svg")
+        if not os.path.exists(plain):
+            continue
+        data = open(plain, "rb").read()
+        v = hashlib.sha256(data).hexdigest()[:10]
+        versioned = f"{name}-{v}.svg"
+        # remove older versions, keep the current one
+        for f in os.listdir(path("assets")):
+            if re.fullmatch(re.escape(name) + r"-[0-9a-f]{10}\.svg", f) and f != versioned:
+                os.remove(path("assets", f))
+        os.replace(plain, path("assets", versioned))
+        readme = re.sub(r"\./assets/" + re.escape(name) + r"(?:-[0-9a-f]{10})?\.svg(?:\?v=\w+)?",
+                        f"./assets/{versioned}", readme)
+    # undo the older ?v= style tags on anything else (like terminal.svg)
+    readme = re.sub(r"(\./assets/[\w.-]+\.svg)\?v=\w+", r"\1", readme)
+    open(readme_path, "w", encoding="utf-8").write(readme)
 
 
 if __name__ == "__main__":
