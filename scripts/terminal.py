@@ -69,14 +69,20 @@ EXTRA = 2 * LH                               # empty space under the last line f
 CON_H = 26 + LH * (len(LINES) - 1) + 16 + EXTRA
 H = CON_Y + CON_H + 8
 
-els, clips, styles, cursor_kf = [], [], [], []
+els, styles, cursor_kf = [], [], []
 t = 0.5
 uid = 0
 dur_of, start_of = {}, {}
 
 
-def txt(parts):
-    return "".join(f'<tspan fill="{C[c]}">{html.escape(x)}</tspan>' for x, c in parts)
+def pieces(parts, x0, y):
+    out, x = [], x0
+    for text, color in parts:
+        if text:
+            out.append(f'<text x="{x:.1f}" y="{y}" textLength="{len(text)*CW:.1f}" lengthAdjust="spacingAndGlyphs" '
+                       f'fill="{C[color]}">{html.escape(text)}</text>')
+        x += len(text) * CW
+    return "".join(out)
 
 
 for li, steps in enumerate(LINES):
@@ -108,10 +114,9 @@ for li, steps in enumerate(LINES):
         uid += 1
         eid = uid
         x0 = PAD_X + col * CW
-        els.append(f'<text x="{x0:.1f}" y="{y}" textLength="{n*CW:.1f}" lengthAdjust="spacingAndGlyphs" '
-                   f'clip-path="url(#k{eid})">{txt(parts)}</text>')
-        clips.append(f'<clipPath id="k{eid}"><rect id="c{eid}" class="r" x="{x0:.1f}" y="{y-18}" '
-                     f'width="{n*CW+1:.1f}" height="{LH}"/></clipPath>')
+        els.append(pieces(parts, x0, y))
+        els.append(f'<rect id="c{eid}" class="r" x="{x0-1:.1f}" y="{y-17}" '
+                   f'width="{n*CW+2:.1f}" height="22" fill="#000"/>')
         if kind == "show":
             styles.append(f"#c{eid}{{animation:show .08s step-start {t:.3f}s both}}")
             cursor_kf.append((t, x0 + n * CW, y, "step-end"))
@@ -210,10 +215,10 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewB
 <style>
 @font-face{{font-family:'VT323';src:url(data:font/woff2;base64,{FONT_B64}) format('woff2')}}
 .con text{{font-family:'VT323',monospace;font-size:{FS}px;white-space:pre}}
-.r{{transform-box:fill-box;transform-origin:left center}}
-@keyframes type{{from{{transform:scaleX(0)}}to{{transform:scaleX(1)}}}}
-@keyframes erase{{from{{transform:scaleX(1)}}to{{transform:scaleX(0)}}}}
-@keyframes show{{from{{transform:scaleX(0)}}to{{transform:scaleX(1)}}}}
+.r{{transform-box:fill-box;transform-origin:right center}}
+@keyframes type{{from{{transform:scaleX(1)}}to{{transform:scaleX(0)}}}}
+@keyframes erase{{from{{transform:scaleX(0)}}to{{transform:scaleX(1)}}}}
+@keyframes show{{from{{transform:scaleX(1)}}to{{transform:scaleX(0)}}}}
 @keyframes cur{{{"".join(kf)}}}
 @keyframes blink{{0%,49%{{opacity:1}}50%,100%{{opacity:0}}}}
 @keyframes pop{{from{{opacity:0}}to{{opacity:1}}}}
@@ -222,7 +227,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewB
 #dlg{{animation:pop .08s step-start {DIALOG_T:.3f}s both}}
 {"".join(styles)}
 </style>
-<defs>{"".join(clips)}
+<defs>
 <linearGradient id="tb" x1="0" x2="1"><stop offset="0" stop-color="#000080"/><stop offset="1" stop-color="#1084d0"/></linearGradient></defs>
 {bevel(0, 0, W, H)}
 {title_bar(4, 4, W - 8, "DOS Prompt - DHYAN")}
