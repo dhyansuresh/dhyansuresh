@@ -12,6 +12,8 @@ on:
       - data/book.json
       - data/about.json
       - data/contact.json
+      - data/terminal.json
+      - scripts/terminal.py
       - .github/workflows/languages.yml
 
 permissions:
@@ -36,6 +38,8 @@ jobs:
       - name: Recent films from Letterboxd
         run: python3 scripts/letterboxd.py
         continue-on-error: true
+      - name: Draw the DOS prompt
+        run: python3 scripts/terminal.py
       - name: Draw the DOS panels
         run: python3 scripts/panels.py
       - name: Commit if changed
