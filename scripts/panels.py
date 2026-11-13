@@ -1,7 +1,8 @@
-"""Draw the Languages and Off the clock panels as Windows 95 style DOS windows.
+"""Draw the profile README panels as Windows 95 style DOS windows.
 
-Reads data/languages.json, data/films.json and data/book.json, downloads the
-cover and posters, and writes assets/languages.svg and assets/offclock.svg.
+Reads the files in data/ (about, languages, films, book, contact), downloads the
+cover and posters, and writes assets/hello.svg, assets/languages.svg,
+assets/offclock.svg and one assets/btn-*.svg button per contact link.
 Images are embedded so they show up inside GitHub's image proxy.
 """
 import base64
@@ -136,7 +137,7 @@ def picture(x, y, w, h, url):
     frame = bevel(x - 3, y - 3, w + 6, h + 6, raised=False, fill="#202020")
     try:
         src = image_data(url, w, h)
-        return frame + f'<image x="{x}" y="{y}" width="{w}" height="{h}" preserveAspectRatio="xMidYMid slice" href="{src}" xlink:href="{src}"/>'
+        return frame + f'<image x="{x}" y="{y}" width="{w}" height="{h}" preserveAspectRatio="xMidYMid slice" href="{src}"/>'
     except Exception as e:
         print(f"image failed {url}: {e}")
         return frame + text(x + w / 2, y + h / 2, "NO IMAGE", "dim", anchor="middle")
@@ -194,7 +195,36 @@ def offclock_panel():
     return window(h, "OFFCLOCK.EXE", "".join(body))
 
 
+def hello_panel():
+    about = json.load(open(path("data", "about.json")))
+    y0, lh = 26 + 30, 25
+    body = [prompt(22, y0, "type hello.txt"), text(22, y0 + lh + 6, about["greeting"], "yellow", size=24)]
+    for i, line in enumerate(about["lines"]):
+        body.append(text(22, y0 + lh * (i + 2) + 12, line, "white"))
+    h = y0 + lh * (len(about["lines"]) + 1) + 12 + 28
+    return window(h, "HELLO.EXE", "".join(body))
+
+
+def button(label, value):
+    bw, bh = 268, 64
+    body = [bevel(0, 0, bw, bh),
+            bevel(6, 6, bw - 12, bh - 12, raised=False, fill="#000000"),
+            text(18, 28, label, "yellow", size=17),
+            text(18, 48, value, "cyan", size=21),
+            f'<path d="M{bw-30} 24l10 8-10 8" fill="none" stroke="{C["cyan"]}" stroke-width="2.5"/>']
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{bw}" height="{bh}" viewBox="0 0 {bw} {bh}" role="img" aria-label="{html.escape(label)}: {html.escape(value)}">
+<style>
+@font-face{{font-family:'VT323';src:url(data:font/woff2;base64,{FONT}) format('woff2')}}
+.t{{font-family:'VT323',monospace;font-size:{FS}px;white-space:pre}}
+</style>
+{"".join(body)}
+</svg>'''
+
+
 def main():
+    open(path("assets", "hello.svg"), "w", encoding="utf-8").write(hello_panel())
+    for c in json.load(open(path("data", "contact.json"))):
+        open(path("assets", f"btn-{c['id']}.svg"), "w", encoding="utf-8").write(button(c["label"], c["value"]))
     open(path("assets", "languages.svg"), "w", encoding="utf-8").write(languages_panel())
     open(path("assets", "offclock.svg"), "w", encoding="utf-8").write(offclock_panel())
     print("panels written")
