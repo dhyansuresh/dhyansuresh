@@ -239,7 +239,7 @@ def bust_cache():
     new name means visitors always get the current picture."""
     readme_path = path("README.md")
     readme = open(readme_path, encoding="utf-8").read()
-    names = ["hello", "languages", "offclock"] + [f"btn-{c['id']}" for c in json.load(open(path("data", "contact.json")))]
+    names = ["terminal", "hello", "languages", "offclock"] + [f"btn-{c['id']}" for c in json.load(open(path("data", "contact.json")))]
     for name in names:
         plain = path("assets", f"{name}.svg")
         if not os.path.exists(plain):
