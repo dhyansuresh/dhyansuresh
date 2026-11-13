@@ -30,6 +30,17 @@ Other         █░░░░░░░░░░░░░░░░░░░░░
 
 📖 **Reading:** *A Guide to the Good Life: The Ancient Art of Stoic Joy* by William B. Irvine
 
+🎬 **Recently watched** on [Letterboxd](https://letterboxd.com/dsuresh/):
+
+<!--FILMS:START-->
+
+* [*The Odyssey*](https://letterboxd.com/dsuresh/film/the-odyssey-2026/) (2026) ★★★★½
+* [*One Battle After Another*](https://letterboxd.com/dsuresh/film/one-battle-after-another/) (2025) ★★★★½
+* [*Longlegs*](https://letterboxd.com/dsuresh/film/longlegs/) (2024) ★★★½
+* [*A Taxi Driver*](https://letterboxd.com/dsuresh/film/a-taxi-driver/) (2017) ★★★ ↻
+
+<!--FILMS:END-->
+
 ## Find me
 
 🌐 [dsuresh.dev](https://www.dsuresh.dev)<br>
