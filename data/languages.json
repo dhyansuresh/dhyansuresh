@@ -3,39 +3,31 @@
   "languages": [
     {
       "name": "Python",
-      "pct": 46.57
+      "pct": 52.63
     },
     {
       "name": "JavaScript",
-      "pct": 18.91
+      "pct": 21.37
     },
     {
       "name": "TypeScript",
-      "pct": 17.55
-    },
-    {
-      "name": "CSS",
-      "pct": 6.01
+      "pct": 19.84
     },
     {
       "name": "C",
-      "pct": 4.06
-    },
-    {
-      "name": "Shell",
-      "pct": 3.45
+      "pct": 4.58
     },
     {
       "name": "Java",
-      "pct": 1.36
+      "pct": 1.54
     },
     {
-      "name": "TeX",
-      "pct": 1.33
+      "name": "Perl",
+      "pct": 0.02
     },
     {
-      "name": "Other",
-      "pct": 0.76
+      "name": "CMake",
+      "pct": 0.01
     }
   ]
 }
