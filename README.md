@@ -7,14 +7,12 @@
 I'm Dhyan, a senior at the University of Central Florida.<br>
 I build full stack apps, with a focus on the backend.<br>
 Undergrad researcher at UCF, working on gait analysis with wearable sensors.<br>
-Currently learning new AI tools (MCP, loop engineering).
 
-
-## Languages across my repos
+## Languages 
 
 <!--LANGS:START-->
 ```text
-Languages across 19 repos (public + private)
+Most used languages:
 
 Python        ████████████░░░░░░░░░░░░░   46.57 %
 JavaScript    █████░░░░░░░░░░░░░░░░░░░░   18.91 %
