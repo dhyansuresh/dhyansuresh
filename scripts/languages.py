@@ -4,11 +4,11 @@ import re
 import urllib.request
 
 OWNER = "dhyansuresh"
+EXCLUDE = {OWNER, "devfest-florida-2026-webxr-voice-workshop"}
 TOP_N = 8
-# exclude
 SKIP = {"Shell", "CSS", "TeX", "HTML", "SCSS", "Makefile", "Dockerfile",
         "Batchfile", "PowerShell", "Procfile", "CMake"}
-MIN_PCT = 1.0   # hide languages that make up less than this share of your code
+MIN_PCT = 1.0
 BAR = 25
 START, END = "<!--LANGS:START-->", "<!--LANGS:END-->"
 
