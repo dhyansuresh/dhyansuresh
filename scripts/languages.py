@@ -1,4 +1,4 @@
-"""Count the languages across Dhyan's repos and write a stats block into README.md.
+"""Count the languages across Dhyan's repos and save them to data/languages.json.
 
 Runs in GitHub Actions. With a LANGS_TOKEN secret it includes private repos;
 without one it falls back to public repos only.
@@ -56,12 +56,29 @@ def build(repos, lang_by_repo, include_private):
     return "\n".join(lines)
 
 
+def save_json(repos, lang_by_repo, path="data/languages.json"):
+    totals = {}
+    for name in repos:
+        for lang, n in lang_by_repo[name].items():
+            totals[lang] = totals.get(lang, 0) + n
+    total = sum(totals.values()) or 1
+    ranked = sorted(totals.items(), key=lambda kv: kv[1], reverse=True)
+    top, rest = ranked[:TOP_N], ranked[TOP_N:]
+    if rest:
+        top.append(("Other", sum(n for _, n in rest)))
+    data = {"repos": len(repos),
+            "languages": [{"name": k, "pct": round(v / total * 100, 2)} for k, v in top]}
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+
 def write_readme(block, path="README.md"):
     readme = open(path, encoding="utf-8").read()
     new = f"{START}\n```text\n{block}\n```\n{END}"
     pattern = re.compile(re.escape(START) + r".*?" + re.escape(END), re.S)
     if not pattern.search(readme):
-        raise SystemExit("Markers not found in README.md")
+        return
     updated = pattern.sub(lambda _: new, readme)
     if updated != readme:
         open(path, "w", encoding="utf-8").write(updated)
@@ -82,6 +99,7 @@ def main():
     block = build(names, langs, bool(private_token))
     print(block)
     write_readme(block)
+    save_json(names, langs)
 
 
 if __name__ == "__main__":

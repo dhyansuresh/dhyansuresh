@@ -1,7 +1,9 @@
-"""Pull Dhyan's latest Letterboxd diary entries into README.md.
+"""Pull Dhyan's latest Letterboxd diary entries into data/films.json.
 
 If Letterboxd can't be reached, the README is left as it is.
 """
+import json
+import os
 import re
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -24,7 +26,7 @@ def films():
     req = urllib.request.Request(FEED, headers={"User-Agent": "Mozilla/5.0 (profile README updater)"})
     with urllib.request.urlopen(req, timeout=20) as r:
         root = ET.fromstring(r.read())
-    out = []
+    out, data = [], []
     for item in root.iter("item"):
         title = item.findtext("letterboxd:filmTitle", namespaces=NS)
         if not title:          # skips lists and other non film entries
@@ -33,6 +35,9 @@ def films():
         rating = item.findtext("letterboxd:memberRating", namespaces=NS)
         rewatch = item.findtext("letterboxd:rewatch", namespaces=NS) == "Yes"
         link = item.findtext("link")
+        m = re.search(r'<img src="([^"]+)"', item.findtext("description") or "")
+        data.append({"title": title, "year": year, "rating": float(rating) if rating else None,
+                     "rewatch": rewatch, "link": link, "poster": m.group(1) if m else None})
         line = f"* [*{title}*]({link})"
         if year:
             line += f" ({year})"
@@ -42,23 +47,27 @@ def films():
         out.append(line)
         if len(out) == COUNT:
             break
-    return out
+    return out, data
 
 
 def main():
     try:
-        lines = films()
+        lines, data = films()
     except Exception as e:  # network trouble or Letterboxd blocking: keep what's there
         print(f"Could not read Letterboxd feed: {e}")
         return
     if not lines:
         print("No films found, leaving README alone")
         return
+    os.makedirs("data", exist_ok=True)
+    with open("data/films.json", "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
     readme = open("README.md", encoding="utf-8").read()
     block = f"{START}\n\n" + "\n".join(lines) + f"\n\n{END}"
     pattern = re.compile(re.escape(START) + r".*?" + re.escape(END), re.S)
     if not pattern.search(readme):
-        raise SystemExit("Film markers not found in README.md")
+        print("\n".join(lines))
+        return
     updated = pattern.sub(lambda _: block, readme)
     if updated != readme:
         open("README.md", "w", encoding="utf-8").write(updated)
