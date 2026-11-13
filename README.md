@@ -4,15 +4,12 @@
 
 <img src="./assets/hello.svg" alt="Hey there! I'm Dhyan, a senior at the University of Central Florida. I build full stack apps, with a focus on the backend. Undergrad researcher at UCF, working on gait analysis with wearable sensors." width="100%">
 
-## Languages 
 
 <img src="./assets/languages.svg" alt="Most used languages across my repos" width="100%">
 
-## ☕ Off the clock
 
 <a href="https://letterboxd.com/dsuresh/"><img src="./assets/offclock.svg" alt="Now reading A Guide to the Good Life by William B. Irvine, plus my recently watched films on Letterboxd" width="100%"></a>
 
-## Find me
 
 <a href="https://www.dsuresh.dev"><img src="./assets/btn-web.svg" alt="Website: dsuresh.dev" width="32%"></a>
 <a href="https://www.linkedin.com/in/dhyansuresh"><img src="./assets/btn-linkedin.svg" alt="LinkedIn: in/dhyansuresh" width="32%"></a>
