@@ -17,7 +17,7 @@
   "last_command": "git commit -m \"please work\"",
  "error": {
   "title": "dhyan.exe",
-  "lines": "Task failed successfully.",
+  "lines": ["Task failed successfully."],
   "buttons": ["OK"]
   }
 }
