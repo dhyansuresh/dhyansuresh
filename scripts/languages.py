@@ -13,7 +13,8 @@ EXCLUDE = {OWNER, "devfest-florida-2026-webxr-voice-workshop"}  # profile repo +
 TOP_N = 8
 # Languages left out of the stats. Edit this list to change what shows.
 SKIP = {"Shell", "CSS", "TeX", "HTML", "SCSS", "Makefile", "Dockerfile",
-        "Batchfile", "PowerShell", "Procfile"}
+        "Batchfile", "PowerShell", "Procfile", "CMake"}
+MIN_PCT = 1.0   # hide languages that make up less than this share of your code
 BAR = 25
 START, END = "<!--LANGS:START-->", "<!--LANGS:END-->"
 
@@ -64,6 +65,8 @@ def save_json(repos, lang_by_repo, path="data/languages.json"):
         for lang, n in lang_by_repo[name].items():
             if lang not in SKIP:
                 totals[lang] = totals.get(lang, 0) + n
+    total = sum(totals.values()) or 1
+    totals = {k: v for k, v in totals.items() if v / total * 100 >= MIN_PCT}
     total = sum(totals.values()) or 1
     ranked = sorted(totals.items(), key=lambda kv: kv[1], reverse=True)
     top = ranked[:TOP_N]
