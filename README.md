@@ -1,8 +1,8 @@
+<img src="./assets/hello.svg" alt="Hey there! I'm Dhyan, a senior at the University of Central Florida. I build full stack apps, with a focus on the backend. Undergrad researcher at UCF, working on gait analysis with wearable sensors." width="100%">
+
 <p align="center">
   <img src="./assets/terminal.svg" alt="A terminal typing out dhyan.json" width="100%">
 </p>
-
-<img src="./assets/hello.svg" alt="Hey there! I'm Dhyan, a senior at the University of Central Florida. I build full stack apps, with a focus on the backend. Undergrad researcher at UCF, working on gait analysis with wearable sensors." width="100%">
 
 
 <img src="./assets/languages.svg" alt="Most used languages across my repos" width="100%">
