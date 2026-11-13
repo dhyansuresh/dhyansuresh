@@ -48,8 +48,7 @@ def build(repos, lang_by_repo, include_private):
     top, rest = ranked[:TOP_N], ranked[TOP_N:]
     if rest:
         top.append(("Other", sum(n for _, n in rest)))
-    scope = "public + private" if include_private else "public"
-    lines = [f"Languages across {len(repos)} repos ({scope})", ""]
+    lines = ["Most used languages:", ""]
     for lang, n in top:
         pct = n / total * 100
         filled = max(1, round(pct / 100 * BAR)) if n else 0
