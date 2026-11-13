@@ -1,0 +1,25 @@
+{
+  "boot": [
+    "DhyanOS(R) 95",
+    "   (C)Copyright Dhyan Corp 2005-2027."
+  ],
+  "command": "type dhyan.json",
+  "fields": [
+    {"key": "name", "value": "Dhyan Suresh"},
+    {"key": "school", "value": "UCF, Computer Science"},
+    {"key": "graduating", "value": "Dec 2027"},
+    {"key": "stress", "value": false, "fix": true, "comment": "obviously"},
+    {"key": "sleep_schedule", "value": "healthy", "fix": "what schedule?"},
+    {"key": "fuel", "value": ["coffee", "more coffee", "hackathon pizza"]},
+    {"key": "building", "value": ["SignSpeak", "HomePilot"]},
+    {"key": "superpower", "value": "turning caffeine into commits"},
+    {"key": "looking_for", "value": "Summer 2027 SWE internship"},
+    {"key": "works_on_my_machine", "value": true}
+  ],
+  "last_command": "git commit -m \"please work\"",
+  "error": {
+    "title": "dhyan.exe",
+    "lines": ["sleep.exe is not responding.", "Try running coffee.exe instead?"],
+    "buttons": ["OK", "Also OK"]
+  }
+}
