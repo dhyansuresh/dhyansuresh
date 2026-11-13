@@ -10,6 +10,8 @@ on:
       - scripts/letterboxd.py
       - scripts/panels.py
       - data/book.json
+      - data/about.json
+      - data/contact.json
       - .github/workflows/languages.yml
 
 permissions:
