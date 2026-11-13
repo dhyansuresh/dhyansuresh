@@ -1,4 +1,4 @@
-name: Update language stats
+name: Update profile stats
 
 on:
   schedule:
@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - scripts/languages.py
+      - scripts/letterboxd.py
       - .github/workflows/languages.yml
 
 permissions:
@@ -22,9 +23,12 @@ jobs:
         env:
           LANGS_TOKEN: ${{ secrets.LANGS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Recent films from Letterboxd
+        run: python3 scripts/letterboxd.py
+        continue-on-error: true
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git diff --cached --quiet || (git commit -m "Update language stats" && git push)
+          git diff --cached --quiet || (git commit -m "Update profile stats" && git push)
