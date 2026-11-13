@@ -14,7 +14,7 @@ Currently learning new AI tools (MCP, loop engineering).
 
 <!--LANGS:START-->
 ```text
-Languages across 8 repos (public)
+Languages across 8 repos (public + private)
 
 Python        █████████████░░░░░░░░░░░░   52.78 %
 TypeScript    █████░░░░░░░░░░░░░░░░░░░░   19.93 %
