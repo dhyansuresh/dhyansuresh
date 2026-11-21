@@ -1,25 +1,25 @@
 {
-  "repos": 19,
+  "repos": 20,
   "languages": [
     {
       "name": "Python",
-      "pct": 52.65
+      "pct": 52.49
     },
     {
       "name": "JavaScript",
-      "pct": 21.38
+      "pct": 21.32
     },
     {
       "name": "TypeScript",
-      "pct": 19.84
+      "pct": 19.79
     },
     {
       "name": "C",
-      "pct": 4.59
+      "pct": 4.57
     },
     {
       "name": "Java",
-      "pct": 1.54
+      "pct": 1.83
     }
   ]
 }

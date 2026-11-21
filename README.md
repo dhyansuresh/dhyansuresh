@@ -5,10 +5,10 @@
 </p>
 
 
-<img src="./assets/languages-8f67e7cace.svg" alt="Most used languages across my repos" width="100%">
+<img src="./assets/languages-68949964a3.svg" alt="Most used languages across my repos" width="100%">
 
 
-<a href="https://letterboxd.com/dsuresh/"><img src="./assets/offclock-aa95e104e9.svg" alt="Now reading A Guide to the Good Life by William B. Irvine, plus my recently watched films on Letterboxd" width="100%"></a>
+<a href="https://letterboxd.com/dsuresh/"><img src="./assets/offclock-5eb101684e.svg" alt="Now reading A Guide to the Good Life by William B. Irvine, plus my recently watched films on Letterboxd" width="100%"></a>
 
 
 <a href="https://www.dsuresh.dev"><img src="./assets/btn-web-62e98750e9.svg" alt="Website: dsuresh.dev" width="32%"></a>
