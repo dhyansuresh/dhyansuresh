@@ -3,23 +3,23 @@
   "languages": [
     {
       "name": "Python",
-      "pct": 50.61
+      "pct": 50.47
     },
     {
       "name": "JavaScript",
-      "pct": 20.55
+      "pct": 20.49
     },
     {
       "name": "TypeScript",
-      "pct": 19.08
+      "pct": 19.02
     },
     {
       "name": "C",
-      "pct": 8.0
+      "pct": 7.98
     },
     {
       "name": "Java",
-      "pct": 1.76
+      "pct": 2.04
     }
   ]
 }

@@ -5,7 +5,7 @@
 </p>
 
 
-<img src="./assets/languages-702ef01a05.svg" alt="Most used languages across my repos" width="100%">
+<img src="./assets/languages-d5573976ce.svg" alt="Most used languages across my repos" width="100%">
 
 
 <a href="https://letterboxd.com/dsuresh/"><img src="./assets/offclock-5eb101684e.svg" alt="Now reading A Guide to the Good Life by William B. Irvine, plus my recently watched films on Letterboxd" width="100%"></a>
